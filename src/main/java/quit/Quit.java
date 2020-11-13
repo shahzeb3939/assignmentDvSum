@@ -2,15 +2,13 @@ package quit;
 
 import io.cucumber.java.After;
 import org.openqa.selenium.WebDriver;
+import setup.Setup;
 
 public class Quit {
-    private WebDriver driver;
+    Setup setup = new Setup();
+    private WebDriver driver = setup.returnDriver();
 
-    public Quit(WebDriver driver){
-        this.driver = driver;
-    }
-
-    @After
+//    @After
     public void quit(){
         driver.quit();
     }
